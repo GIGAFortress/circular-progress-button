@@ -34,7 +34,8 @@ public class Sample2Activity extends Activity {
             @Override
             public void onClick(View v) {
                 if (circularButton1.getProgress() == 0) {
-                    simulateSuccessProgress(circularButton1);
+//                    simulateSuccessProgress(circularButton1);
+                    circularButton1.setProgress(40);
                 } else {
                     circularButton1.setProgress(0);
                 }
@@ -56,7 +57,7 @@ public class Sample2Activity extends Activity {
 
     private void simulateSuccessProgress(final CircularProgressButton button) {
         ValueAnimator widthAnimation = ValueAnimator.ofInt(1, 100);
-        widthAnimation.setDuration(1500);
+        widthAnimation.setDuration(5000);
         widthAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
         widthAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
