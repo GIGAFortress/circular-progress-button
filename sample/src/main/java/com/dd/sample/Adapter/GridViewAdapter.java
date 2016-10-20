@@ -2,6 +2,7 @@ package com.dd.sample.Adapter;
 
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class GridViewAdapter extends BaseAdapter {
     Context context;
     HashMap<Integer, String> hashMap;
     LayoutInflater lf;
+    int progress;
     private String TAG = "GridViewAdapter";
 
     public GridViewAdapter(List<String> list, Context context, HashMap<Integer, String> hashMap) {
@@ -59,25 +61,17 @@ public class GridViewAdapter extends BaseAdapter {
             myViewHolder = (MyViewHolder) convertView.getTag();
         }
         myViewHolder.circularProgressButton.setText(getItem(position).toString());
-//        ImageView imageView = (ImageView) view.findViewById(R.id.grid_image);
-//        TextView textView = (TextView) view.findViewById(R.id.grid_text);
-//        textView.setText(getItem(position).toString());
-        // for (int i = 0; i < list.size(); i++) {
-
+//        myViewHolder.circularProgressButton.setProgress(40);
         String string = hashMap.get(position);
 
         if (null != string && string.equals(list.get(position))) {
-//            imageView.setBackgroundResource(android.R.color.holo_green_light);
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    myViewHolder.circularProgressButton.setProgress(0);
-                }
-            });
-
+            myViewHolder.circularProgressButton.setProgress(progress);
         }
-        // }
         return convertView;
+    }
+
+    public void setProgress(int progress){
+        this.progress = progress;
     }
 
     public class MyViewHolder {

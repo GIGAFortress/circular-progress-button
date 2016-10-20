@@ -12,8 +12,6 @@
         android:layout_margin="5dp"
         android:textColor="@color/primary_text"
         android:textSize="18sp"
-        app:cpb_textComplete="完成"
-        app:cpb_textError="错误"
         app:cpb_textIdle="Sample"/>
 
     <!--

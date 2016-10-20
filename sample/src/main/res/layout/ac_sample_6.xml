@@ -2,7 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="32dp"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -28,9 +27,25 @@
         app:cpb_textError="@string/Error"
         app:cpb_textIdle="@string/Upload" />
 
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="140dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:text="演示"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="140dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:text="刷新"
+        android:textSize="18sp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="1">
         <GridView
             android:id="@+id/gridView"
